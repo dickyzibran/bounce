@@ -8,7 +8,7 @@
 ## English Version
 
 A vibrant, retro-futuristic arcade/platformer game built using vanilla **HTML5 Canvas**, **CSS3**, and **JavaScript**. Featuring a responsive overlays, and interactive audio.
-<a href="https://dickyzibran.github.io/Bounce/" target="_blank">
+<a href="https://dickyzibran.github.io/bounce/" target="_blank">
   Click here to view
 </a>
 
