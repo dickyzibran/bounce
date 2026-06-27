@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Bounce | Premium Cyberpunk Arcade Platformer</title>
+    <meta name="description" content="Dodge spikes, activate jump pads, and conquer neon obstacles in Neon Bounce, a premium retro-futuristic arcade platformer built using HTML5 Canvas, CSS3, and JavaScript.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="neon-grid-background" aria-hidden="true"></div>
+    <div class="radial-glow" aria-hidden="true"></div>
+
+    <main id="game-main" class="game-wrapper">
+        <h1 class="visually-hidden">Neon Bounce - Cyberpunk Platformer</h1>
+        
+        <div class="game-container" id="main-game-container">
+            <canvas id="gameCanvas" aria-label="Game Screen. Control the bouncing neon sphere to reach the portal."></canvas>
+            
+            <div id="ui-layer" class="ui-layer">
+                <header class="hud">
+                    <div class="score-board" id="lives-hud">
+                        <span class="label">LIVES</span>
+                        <span id="lives" class="value" aria-live="polite">❤️❤️❤️</span>
+                    </div>
+                    <div class="level-indicator" id="stage-hud">
+                        <span class="label">STAGE</span>
+                        <span id="level" class="value" aria-live="polite">1</span>
+                    </div>
+                </header>
+
+                <div class="panels-container">
+                    <section id="main-menu" class="overlay-panel glass-panel">
+                        <h2 class="glitch" data-text="NEON BOUNCE">NEON BOUNCE</h2>
+                        <p class="game-instructions">
+                            Use <span class="kbd">A</span> / <span class="kbd">D</span> or <span class="kbd">◀</span> / <span class="kbd">▶</span> to move.<br>
+                            Press <span class="kbd">W</span>, <span class="kbd">▲</span>, or <span class="kbd">Spacebar</span> to jump.<br>
+                            Reach the portal to advance.
+                        </p>
+                        <div class="high-score-board">
+                            <span class="hs-label">SYSTEM HIGH SCORE</span>
+                            <span class="hs-value">STAGE <strong id="main-highscore">1</strong></span>
+                        </div>
+                        <button id="start-btn" class="neon-btn">START SURVIVAL</button>
+                    </section>
+
+                    <section id="game-over-menu" class="overlay-panel glass-panel hidden">
+                        <h2 class="red-glitch" data-text="SYSTEM FAILURE">SYSTEM FAILURE</h2>
+                        <p class="failure-msg">Connection lost. Signal terminated.</p>
+                        <div class="final-stats">
+                            <span>SECTOR REACHED: STAGE <strong id="final-score">1</strong></span>
+                        </div>
+                        <div class="high-score-board">
+                            <span class="hs-label">PERSONAL RECORD</span>
+                            <span class="hs-value">STAGE <strong id="gameover-highscore">1</strong></span>
+                        </div>
+                        <button id="restart-btn" class="neon-btn red-btn">REBOOT SYSTEM</button>
+                    </section>
+
+                    <section id="win-menu" class="overlay-panel glass-panel hidden">
+                        <h2 class="neon-text-win glitch-green" data-text="MISSION ACCOMPLISHED">MISSION ACCOMPLISHED</h2>
+                        <p class="win-msg">All sectors cleared successfully. Core stability 100%.</p>
+                        <button id="win-restart-btn" class="neon-btn green-btn">REPLAY SIMULATION</button>
+                    </section>
+                </div>
+
+                <div id="cheat-toast" class="toast hidden" role="alert" aria-live="assertive">
+                    <span class="icon" id="toast-icon">⚡</span>
+                    <span class="msg" id="toast-msg">GOD MODE ACTIVATED</span>
+                </div>
+            </div>
+        </div>
+
+        <nav id="mobile-controls" class="mobile-controls" aria-label="Mobile Controls">
+            <div class="d-pad">
+                <button id="btn-left" class="touch-btn" aria-label="Move Left">◀</button>
+                <button id="btn-right" class="touch-btn" aria-label="Move Right">▶</button>
+            </div>
+            <div class="action-pad">
+                <button id="btn-jump" class="touch-btn" aria-label="Jump">▲</button>
+            </div>
+        </nav>
+    </main>
+
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
